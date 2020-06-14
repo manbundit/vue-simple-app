@@ -1,0 +1,70 @@
+@import "variables.less";
+
+.login-page{
+    // font-size: 18px;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .wrap-form{
+        margin: 0 auto;
+        max-width: 480px;
+        width: 100%;
+        padding: 40px 0;    
+    }
+}
+
+.wrap-datepicker{
+    position: relative;
+    &.has-value{
+        .input-label{
+            transform: scale(0.9);
+            top: -12px;
+        }
+    }
+    .input-label{
+        z-index: 1;
+        pointer-events: none;
+        position: absolute;
+        font-size: 16px;
+        top: 14px;
+        left: 10px;
+        padding: 0 10px;
+        transform-origin: left;
+        transition: all 0.2s;
+        background: white;
+        font-weight: bold;
+    }
+}
+.vdp-datepicker{
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2c3e50;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    position: relative;
+    .validate-text{
+        color: red;
+        position: absolute;
+        left: 0;
+        top: calc(100% + 6px);
+    }
+    &.invalid{
+        border: 1px solid red;
+    }
+    > div{
+        width: 100%;
+    }
+    input{
+        background: transparent;
+        width: 100%;
+        border: none;
+        outline: none;
+        height: 32px;
+        font-size: 16px;
+    }
+}

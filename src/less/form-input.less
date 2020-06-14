@@ -1,0 +1,57 @@
+@import "variables.less";
+
+.input-wrapper{
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2c3e50;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    position: relative;
+    &.textarea{
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .validate-text{
+        color: red;
+        position: absolute;
+        left: 0;
+        top: calc(100% + 6px);
+    }
+    &.invalid{
+        margin-bottom: 40px;
+        border: 1px solid red;
+    }
+    .input-label{
+        pointer-events: none;
+        position: absolute;
+        font-size: 16px;
+        top: 14px;
+        left: 10px;
+        padding: 0 10px;
+        transform-origin: left;
+        transition: all 0.2s;
+        background: white;
+        font-weight: bold;
+    }
+    input,textarea{
+        background: transparent;
+        width: 100%;
+        border: none;
+        outline: none;
+        height: 32px;
+        font-size: 16px;
+        &.textarea{
+            resize: none;
+            // padding: 12px 0;
+        }
+        &:focus,&.has-value{
+            +.input-label{
+                transform: scale(0.9);
+                top: -12px;
+            }
+        }
+    }
+}
